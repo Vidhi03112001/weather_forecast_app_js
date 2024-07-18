@@ -9,3 +9,4 @@ Suggestion: Make PR from branch: 18_07_2024_task_1 to development.
 2. Handle custom errors based on response status code.
 3. Handle genric errors using try/catch block.
 4. Make function call independent of url and request method type.
+5. Genarate url based on city and api key i.e. pass city and api in string to form custom url.
