@@ -1,10 +1,10 @@
-import { baseUrl,appKey ,GET} from "./constants.js";
+import { GET } from "./constants.js";
 import { callApi } from "./app.js";
+import { getUrl } from "./utility.js";
 
-async function getData(baseUrl,city,appKey) {
-    const url =
-  `${baseUrl}?q=${city}&appid=${appKey}`;
-  let response = await callApi(url,GET);
+async function getData(city) {
+  let url = getUrl(city);
+  let response = await callApi(url, GET);
   console.log(response);
 }
-getData(baseUrl,"Pune",appKey);
+getData("Pune");
