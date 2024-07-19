@@ -5,8 +5,6 @@ import { metric } from "./app/constants.js";
 import { getDateTime, getTimezone } from "./app/utility.js";
 
 let cityInput = document.getElementById("city-input");
-let form = document.getElementById("city-form");
-
 let responseElement = document.querySelector(".response");
 let cityMood = document.querySelector(".city-mood");
 let cityName = document.querySelector(".city-name");
@@ -39,6 +37,7 @@ cityInput.addEventListener("keypress", async (event) => {
     pressure.innerText = `${response["main"]["pressure"]}mmHg`;
     sunrise.innerText = getDateTime(response["sys"]["sunrise"]).time;
     sunset.innerText = getDateTime(response["sys"]["sunset"]).time;
+    cityInput.value = "";
   }
 });
 async function getWeatherData(city) {
