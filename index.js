@@ -10,9 +10,9 @@ let responseElement = document.querySelector(".response");
 cityInput.addEventListener("keypress", async (event) => {
   if (event.key === "Enter") {
     event.preventDefault();
-    responseElement.style.display = "block";
-    let response = await getWeatherData(cityInput.value);
-    showWeatherData(response)
+   responseElement.classList.remove("hidden");
+    let responseData = await getWeatherData(cityInput.value);
+    showWeatherData(responseData)
   }
 });
 async function getWeatherData(city) {
