@@ -16,5 +16,14 @@ task code: 19_07_2024_task_2
 
 Suggestion: Make PR from branch: 19_07_2024_task_2 to development.
 
-1. Write HTML code structure to take input from user for city name.
-2. Show temprature and other weather details from open weather map API.
+1. Write HTML code structure to take input from user for city name. ✔️
+2. Show temprature and other weather details from open weather map API. ✔️
+3. Show error in case of any error from weather API. ✔️
+
+Task: 3
+task code: 20_07_2024_task_3
+
+1. Add CSS styling for HTML elements.
+2. Deploy the application on netlify.
+3. Make application available on mobile screen.
+4. Hide API key in network call.
