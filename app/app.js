@@ -1,20 +1,21 @@
-import { getDateTime, getTimezone,getUrl } from "./utility.js";
-import { metric,GET } from "./constants.js";
-
-let responseElement = document.querySelector(".response");
-let cityMood = document.querySelector(".city-mood");
-let cityName = document.querySelector(".city-name");
-let cityTemp = document.querySelector(".city-temp");
-let cityDesc = document.querySelector(".city-desc");
-let cityTime = document.querySelector(".time");
-let cityDate = document.querySelector(".date");
-let timezone = document.querySelector(".timezone");
-let windSpeed = document.querySelector("#wind-speed");
-let humidity = document.querySelector("#humidity");
-let pressure = document.querySelector("#pressure");
-let sunrise = document.querySelector("#sunrise");
-let sunset = document.querySelector("#sunset");
-let errorElement = document.querySelector(".error");
+import { getDateTime, getTimezone, getUrl } from "./utility.js";
+import { metric, GET } from "./constants.js";
+import {
+  responseElement,
+  cityMood,
+  cityName,
+  cityTemp,
+  cityDesc,
+  cityTime,
+  cityDate,
+  timezone,
+  windSpeed,
+  humidity,
+  pressure,
+  sunrise,
+  sunset,
+  errorElement,
+} from "../elements.js";
 
 export const callApi = async (url, methodType) => {
   try {
@@ -40,7 +41,7 @@ export const getWeatherData = async (city) => {
 export const showWeatherData = (response) => {
   console.log(response);
   responseElement.classList.remove("hidden");
-  errorElement.classList.add("hidden")
+  errorElement.classList.add("hidden");
   cityMood.innerText = response["weather"][0]["main"];
   cityName.innerText = response["name"];
   cityTemp.innerText = `${response["main"]["temp"]}°C`;

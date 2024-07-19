@@ -1,6 +1,5 @@
 import { showWeatherData ,showError,getWeatherData} from "./app/app.js";
-
-let cityInput = document.getElementById("city-input");
+import { cityInput } from "./elements.js";
 cityInput.addEventListener("keypress", async (event) => {
   if (event.key === "Enter") {
     event.preventDefault();
