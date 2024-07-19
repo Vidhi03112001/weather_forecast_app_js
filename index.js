@@ -29,14 +29,14 @@ form.addEventListener("submit",async (event)=>{
   console.log(response);
   cityMood.innerText=response["weather"][0]["main"]
   cityName.innerText=response["name"]
-  cityTemp.innerText=response["main"]["temp"]
+  cityTemp.innerText=`${response["main"]["temp"]}°C`
   cityDesc.innerText=response["weather"][0]["description"]
   cityTime.innerText=getDateTime(response["dt"]).time
   cityDate.innerText=getDateTime(response["dt"]).date
   timezone.innerText=getTimezone(response["timezone"])
-  windSpeed.innerText=response["wind"]["speed"]
-  humidity.innerText=response["main"]["humidity"]
-  pressure.innerText=response["main"]["pressure"]
+  windSpeed.innerText=`${response["wind"]["speed"]}m/s`
+  humidity.innerText=`${response["main"]["humidity"]}%`
+  pressure.innerText=`${response["main"]["pressure"]}mmHg`
   sunrise.innerText= getDateTime(response["sys"]["sunrise"]).time
   sunset.innerText= getDateTime(response["sys"]["sunset"]).time
 })
