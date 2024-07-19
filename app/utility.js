@@ -43,5 +43,5 @@ export const getTimezone = (offsetSeconds) => {
   let hours = parseInt(decimalHoursStr.split(".")[0]);
   let minutes = (decimalHours - hours) * 60;
 
-  return `${sign} ${getDoubleDigit(hours)}:${getDoubleDigit(minutes)} GMT`;
+  return `${sign}${getDoubleDigit(hours)}:${getDoubleDigit(minutes)} GMT`;
 };
