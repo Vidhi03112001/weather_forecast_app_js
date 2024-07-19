@@ -1,6 +1,7 @@
-import { getDateTime, getTimezone } from "./utility.js";
+import { getDateTime, getTimezone,getUrl } from "./utility.js";
+import { metric,GET } from "./constants.js";
 
-let cityInput = document.getElementById("city-input");
+let responseElement = document.querySelector(".response");
 let cityMood = document.querySelector(".city-mood");
 let cityName = document.querySelector(".city-name");
 let cityTemp = document.querySelector(".city-temp");
@@ -13,6 +14,7 @@ let humidity = document.querySelector("#humidity");
 let pressure = document.querySelector("#pressure");
 let sunrise = document.querySelector("#sunrise");
 let sunset = document.querySelector("#sunset");
+let errorElement = document.querySelector(".error");
 
 export const callApi = async (url, methodType) => {
   try {
@@ -21,18 +23,24 @@ export const callApi = async (url, methodType) => {
     });
     let data = await response.json();
     if (response.status === 200) {
-      return data;
+      return { error: null, data: data };
     } else {
       throw Error("Error : " + data["message"]);
     }
   } catch (error) {
     console.log(error.message);
-    return {};
+    return { error: error.message, data: null };
   }
 };
-
+export const getWeatherData = async (city) => {
+  let url = getUrl(city, metric);
+  let response = await callApi(url, GET);
+  return response;
+};
 export const showWeatherData = (response) => {
   console.log(response);
+  responseElement.classList.remove("hidden");
+  errorElement.classList.add("hidden")
   cityMood.innerText = response["weather"][0]["main"];
   cityName.innerText = response["name"];
   cityTemp.innerText = `${response["main"]["temp"]}°C`;
@@ -45,5 +53,10 @@ export const showWeatherData = (response) => {
   pressure.innerText = `${response["main"]["pressure"]}mmHg`;
   sunrise.innerText = getDateTime(response["sys"]["sunrise"]).time;
   sunset.innerText = getDateTime(response["sys"]["sunset"]).time;
-  cityInput.value = "";
+};
+export const showError = (error) => {
+  console.log(error);
+  responseElement.classList.add("hidden");
+  errorElement.classList.remove("hidden");
+  errorElement.innerHTML = `<h3>${error}</h3>`;
 };
