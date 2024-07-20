@@ -3,15 +3,13 @@ import {
   showError,
   getWeatherData,
   validateInput,
-  showLoading
+  showLoading,
 } from "./app/app.js";
-import {
-  cityInput,
-} from "./elements.js";
+import { cityInput } from "./elements.js";
 cityInput.addEventListener("keypress", async (event) => {
   if (event.key === "Enter") {
     event.preventDefault();
-showLoading();
+    showLoading();
     if (validateInput(cityInput.value)) {
       let response = await getWeatherData(cityInput.value);
       if (response.error === null) {
@@ -22,7 +20,13 @@ showLoading();
     } else {
       showError("Invalid Input");
     }
-
     cityInput.value = "";
   }
+});
+
+//Showing Default data after reloading the window
+window.addEventListener("load", async (event) => {
+  event.preventDefault();
+  let response = await getWeatherData("Pune");
+  showWeatherData(response.data);
 });
