@@ -9,22 +9,21 @@
   <body>
     <nav class="navbar"><h1>Weather Application</h1></nav>
     <div class="container">
-      <form action="" id="city-form">
         <input
           type="text"
           id="city-input"
-          class="input"
           name="input"
-          placeholder="Type City Name"
+          placeholder="Your City Name"
         />
-      </form>
+   
       <div class="loading hidden"><h3>Loading...</h3></div>
       <div class="response hidden">
+        <h3>Current Weather Data and Forecast in your city</h3>
         <div class="city">
           <div class="city-mood"></div>
           <div class="city-details">
-            <div class="city-name"></div>
             <div class="city-temp"></div>
+            <div class="city-name"></div>
             <div class="city-desc"></div>
           </div>
           <div class="city-time">
@@ -36,18 +35,29 @@
         <div class="weather-info">
           <ul>
             <li class="weather-info-item">
-              Wind Speed: <span id="wind-speed"></span>
+              <span class="weather-info-title">Wind Speed</span>:
+              <span id="wind-speed"></span>
             </li>
             <li class="weather-info-item">
-              Humidity: <span id="humidity"></span>
+              <span class="weather-info-title">Humidity</span>: <span
+                id="humidity"
+              ></span>
             </li>
             <li class="weather-info-item">
-              Presuure: <span id="pressure"></span>
+              <span class="weather-info-title">Pressure</span>: <span
+                id="pressure"
+              ></span>
+            </li>
+          </ul>
+          <ul>
+            <li class="weather-info-item">
+              <span class="weather-info-title">Sunrise</span>: <span
+                id="sunrise"
+              ></span>
             </li>
             <li class="weather-info-item">
-              Sunrise: <span id="sunrise"></span>
+              <span class="weather-info-title">Sunset</span>: <span id="sunset"></span>
             </li>
-            <li class="weather-info-item">Sunset: <span id="sunset"></span></li>
           </ul>
         </div>
       </div>

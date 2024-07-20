@@ -18,15 +18,15 @@ cityInput.addEventListener("keypress", async (event) => {
         showError(response.error);
       }
     } else {
-      showError("Invalid Input");
+      showError("Error: Invalid Input");
     }
     cityInput.value = "";
   }
 });
 
-//Showing Default data after reloading the window
+// Showing Default data after reloading the window
 window.addEventListener("load", async (event) => {
   event.preventDefault();
-  let response = await getWeatherData("Pune");
-  showWeatherData(response.data);
+   let response = await getWeatherData("Pune");
+   showWeatherData(response.data);
 });

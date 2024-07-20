@@ -1,3 +1,127 @@
+/* Order of classes matter in CSS */
+:root {
+  --grey:#b3b3b3;
+  --white: #ffffff;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: Roboto, sans-serif;
+}
+
+.navbar{
+  font-size: larger;
+}
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 80vh;
+  width: 50vw;
+  margin-top: 0px;
+  
+}
+#city-input{
+  margin-bottom: 30px;
+ width: 80%;
+ height: 30px;
+ border: none; /* Remove all borders */
+    border-bottom: 1px solid var(--grey); /* Add only bottom border */
+    padding: 2.5px; /* Optional: Add some padding */
+    outline: none; /* Remove the default outline */
+}
+.response{
+  width: 90%;
+  height: 80%;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow:  0 0 0 1px var(--grey) ;
+  padding: 0px;
+
+}
+.response h3{
+margin-top: 0px;
+padding-top: 1px;
+}
+.city{
+  display: flex;
+  flex-direction:row ;
+  margin-bottom: 6px;
+  width: 100%;
+  
+}
+.city-mood{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+font-size: x-large;
+ 
+}
+
+.city-details{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+
+}
+.city-temp{
+ font-size: xx-large;
+}
+.city-name{
+  font-size: x-large;
+}
+.city-desc{
+  color: 	#484848;
+}
+
+.city-time{
+  flex:1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.time{
+  font-size: large;
+  margin-bottom: 3px;
+}
+.date{
+  font-size: large;
+  margin-bottom: 3px;
+}
+
+.weather-info{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  
+}
+.weather-info ul{
+  list-style-type: none;
+}
+.weather-info ul:nth-child(2) {
+  margin-top: 0px;
+}
+.weather-info-title{
+  color:#5b5353e7 ;
+font-weight: bold;
+}
+.weather-info-item{
+  margin-bottom: 3px;
+}
 .hidden {
   display: none;
 }
