@@ -8,7 +8,7 @@ export const getDateTime = (epochTime) => {
   let date = new Date(epochTime * 1000);
   return {
     date: getDate(date.getDate(), date.getMonth() + 1, date.getFullYear()),
-    time: getTime(date.getHours(), date.getMinutes(), date.getSeconds()),
+    time: getTime(date.getHours(), date.getMinutes()),
   };
 };
 
@@ -23,10 +23,8 @@ const getDate = (date, month, year) => {
   return `${getDoubleDigit(date)}/${getDoubleDigit(month)}/${year}`;
 };
 
-const getTime = (hours, minutes, seconds) => {
-  return `${getDoubleDigit(hours)}:${getDoubleDigit(minutes)}:${getDoubleDigit(
-    seconds
-  )}`;
+const getTime = (hours, minutes) => {
+  return `${getDoubleDigit(hours)}:${getDoubleDigit(minutes)}`;
 };
 
 export const getTimezone = (offsetSeconds) => {
