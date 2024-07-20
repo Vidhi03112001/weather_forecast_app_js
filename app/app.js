@@ -73,3 +73,4 @@ export const showError = (error) => {
   errorElement.classList.remove("hidden");
   errorElement.innerHTML = `<h3>${error}</h3>`;
 };
+
