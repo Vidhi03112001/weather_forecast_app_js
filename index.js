@@ -3,11 +3,15 @@ import {
   showError,
   getWeatherData,
   validateInput,
+  showLoading
 } from "./app/app.js";
-import { cityInput } from "./elements.js";
+import {
+  cityInput,
+} from "./elements.js";
 cityInput.addEventListener("keypress", async (event) => {
   if (event.key === "Enter") {
     event.preventDefault();
+showLoading();
     if (validateInput(cityInput.value)) {
       let response = await getWeatherData(cityInput.value);
       if (response.error === null) {
@@ -16,7 +20,7 @@ cityInput.addEventListener("keypress", async (event) => {
         showError(response.error);
       }
     } else {
-      showError("Invalid Input")
+      showError("Invalid Input");
     }
 
     cityInput.value = "";

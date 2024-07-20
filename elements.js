@@ -13,6 +13,7 @@ let sunrise = document.querySelector("#sunrise");
 let sunset = document.querySelector("#sunset");
 let errorElement = document.querySelector(".error");
 let cityInput = document.getElementById("city-input");
+let loading=document.querySelector(".loading")
 export {
   responseElement,
   cityMood,
@@ -29,4 +30,5 @@ export {
   sunrise,
   sunset,
   errorElement,
+  loading
 };

@@ -15,6 +15,7 @@ import {
   sunrise,
   sunset,
   errorElement,
+  loading
 } from "../elements.js";
 
 export const callApi = async (url, methodType) => {
@@ -37,6 +38,11 @@ export const callApi = async (url, methodType) => {
 export const validateInput = (input) => {
   return input.trim() !== "";
 };
+export const showLoading=()=>{
+  loading.classList.remove("hidden");
+  responseElement.classList.add("hidden");
+  errorElement.classList.add("hidden");
+}
 export const getWeatherData = async (city) => {
   let url = getUrl(city, metric);
   let response = await callApi(url, GET);
@@ -44,6 +50,7 @@ export const getWeatherData = async (city) => {
 };
 export const showWeatherData = (response) => {
   console.log(response);
+  loading.classList.add("hidden")
   responseElement.classList.remove("hidden");
   errorElement.classList.add("hidden");
   cityMood.innerText = response["weather"][0]["main"];
@@ -61,6 +68,7 @@ export const showWeatherData = (response) => {
 };
 export const showError = (error) => {
   console.log(error);
+  loading.classList.add("hidden")
   responseElement.classList.add("hidden");
   errorElement.classList.remove("hidden");
   errorElement.innerHTML = `<h3>${error}</h3>`;
