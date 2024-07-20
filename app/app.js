@@ -62,7 +62,7 @@ export const showWeatherData = (response) => {
   timezone.innerText = getTimezone(response["timezone"]);
   windSpeed.innerText = `${response["wind"]["speed"]}m/s`;
   humidity.innerText = `${response["main"]["humidity"]}%`;
-  pressure.innerText = `${response["main"]["pressure"]}mmHg`;
+  pressure.innerText = `${Math.round(parseInt(response["main"]["pressure"])*0.75006375541921)}mmHg`;
   sunrise.innerText = getDateTime(response["sys"]["sunrise"]).time;
   sunset.innerText = getDateTime(response["sys"]["sunset"]).time;
 };
