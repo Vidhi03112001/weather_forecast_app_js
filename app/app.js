@@ -33,6 +33,10 @@ export const callApi = async (url, methodType) => {
     return { error: error.message, data: null };
   }
 };
+
+export const validateInput = (input) => {
+  return input.trim() !== "";
+};
 export const getWeatherData = async (city) => {
   let url = getUrl(city, metric);
   let response = await callApi(url, GET);
