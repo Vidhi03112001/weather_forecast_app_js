@@ -23,8 +23,9 @@ Suggestion: Make PR from branch: 19_07_2024_task_2 to development.
 Task: 3
 task code: 20_07_2024_task_3
 
-1. Add CSS styling for HTML elements.
-2. Deploy the application on netlify.
+1. Add  basic CSS styling for HTML elements.✔️
+2. Deploy the application on netlify.✔️
 3. Make application available on mobile screen.
 4. Hide API key in network call.
-5. Handle case if city name is empty(empty string or string with spaces)
+5. Handle case if city name is empty(empty string or string with spaces)✔️
+
